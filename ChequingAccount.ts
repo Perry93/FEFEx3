@@ -22,15 +22,27 @@ private readonly TRANSFEE: number = 10;
         this.accountBalance -= amountToWithdrawal;
     }
 
+    /**
+     * Deposit to chequing account.
+     * @param amount The amount to deposit
+     */
     depositAmount(amount: number): void {
         this.accountBalance += amount;
     }
 
+    /**
+     * Get the current balance of the chequing account.
+     * @returns The account balance.
+     */
     getBalance(): number {
         return this.accountBalance;
     }
     
-    printBalance(): string {
+    /**
+     * Print chequing account balance.
+     * @returns Prints the account balance with currency formatting.
+     */
+       printBalance(): string {
         let formattedValue: string = new Intl.NumberFormat('en-CA', {
             style: 'currency',
             currency: 'EUR'
